@@ -6,6 +6,23 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <button onclick="start()">시작</button>
+    <button onclick="stop()">중지</button>
+    <script>
+      let num = 0;
+      let interval = null;
+
+      function start() {
+        interval = window.setInterval(() => {
+          console.log(++num);
+        }, 1000);
+      }
+
+      function stop() {
+        if (interval !== null) {
+          window.clearInterval(interval);
+        }
+      }
+    </script>
   </body>
 </html>
